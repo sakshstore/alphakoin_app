@@ -1,0 +1,162 @@
+
+
+
+
+
+
+
+
+      <ion-content transparent background-size >
+      
+        <ion-toolbar color="dark">
+          <ion-buttons slot="start">
+         
+          <ion-title>Settings</ion-title></ion-buttons>
+        </ion-toolbar>
+ 
+          <ion-card class="card">
+            <ion-card-header color="light">
+              <h1>Settings</h1>
+            </ion-card-header>
+         
+            <ion-card-content>
+            <ion-grid>
+            <ion-row>
+              <ion-col>
+
+
+        <ion-list >
+
+            <ion-item routerLink="/dashboard" routerLinkActive="active" >
+              <ion-icon style="color:#e29c45;" slot="start" name="home"></ion-icon>
+              <ion-label style="color:#e29c45;">
+                <b>Home</b>
+              </ion-label>
+              <ion-icon style="color:#0d47a1;" slot="end" name="chevron-forward-outline"></ion-icon>
+            </ion-item>
+
+            <ion-item routerLink="/buy-coin" routerLinkActive="active" >
+              <ion-icon style="color:#e29c45;" slot="start" name="logo-bitcoin"></ion-icon>
+              <ion-label style="color:#e29c45;">
+                <b>Buy Coin</b>
+              </ion-label>
+              <ion-icon  slot="end" style="color:#0d47a1;" name="chevron-forward-outline"></ion-icon>
+            </ion-item>
+            
+
+            <ion-item routerLink="/send-coin" routerLinkActive="active" >
+            
+
+              
+              <ion-icon style="color:#e29c45;" slot="start"  name="send"></ion-icon>
+              <ion-label style="color:#e29c45;">
+                <b>Send Coins</b>
+              </ion-label>
+              <ion-icon  slot="end" style="color:#0d47a1;" name="chevron-forward-outline"></ion-icon>
+            </ion-item>
+
+            <ion-item routerLink="/profile" routerLinkActive="active" >
+              <ion-icon style="color:#e29c45;" slot="start" name="person-add"></ion-icon>
+              <ion-label style="color:#e29c45;">
+                <b>Profile</b>
+              </ion-label>
+              <ion-icon  slot="end" style="color:#0d47a1;" name="chevron-forward-outline"></ion-icon>
+            </ion-item>
+
+            <ion-item routerLink="/transactions" routerLinkActive="active" >
+              <ion-icon style="color:#e29c45;" slot="start" name="list"></ion-icon>
+              <ion-label style="color:#e29c45;">
+                <b>Transactions</b>
+              </ion-label>
+              <ion-icon  slot="end" style="color:#0d47a1;"  name="chevron-forward-outline"></ion-icon>
+            </ion-item>
+
+              <ion-item routerLink="/change-password" routerLinkActive="active" >
+              <ion-icon style="color:#e29c45;" slot="start" name="person-circle-outline"></ion-icon>
+              <ion-label style="color:#e29c45;">
+                <b>Change Password</b>
+              </ion-label>
+           
+              <ion-icon  slot="end" style="color:#0d47a1;" name="chevron-forward-outline"></ion-icon>
+            </ion-item>
+
+
+
+            
+
+          
+            <ion-item routerLink="/ticket-list" routerLinkActive="active" >
+              <ion-icon style="color:#e29c45;" slot="start" name="people"></ion-icon>
+
+            
+
+
+              <ion-label style="color:#e29c45;">
+                <b>Support Tickets</b>
+              </ion-label>
+              <ion-icon  slot="end" style="color:#0d47a1;" name="chevron-forward-outline"></ion-icon>
+            </ion-item>
+
+
+
+            <ion-item (click)="logout()">
+              <ion-icon style="color:#e29c45;" slot="start" name="log-out"></ion-icon>
+              <ion-label style="color:#e29c45;">
+                <b>Logout</b>
+              </ion-label>
+              <ion-icon  style="color:#0d47a1;" slot="end" name="chevron-forward-outline"></ion-icon>
+            </ion-item>
+          
+
+
+        </ion-list>
+
+        </ion-col></ion-row></ion-grid></ion-card-content></ion-card>
+
+
+      </ion-content>
+
+
+
+
+
+
+      <ion-footer>
+        <ion-toolbar>
+      
+      
+          <ion-tabs>
+      
+            <ion-tab-bar slot="bottom" color="dark">
+              <ion-tab-button (click)="sendto('dashboard')">
+                <ion-icon name="home"></ion-icon>
+                <ion-label color="light">Home</ion-label>
+              </ion-tab-button>
+          
+              <ion-tab-button (click)="sendto('transactions')">
+                <ion-icon name="wallet"></ion-icon>
+                <ion-label   color="light">Transactions</ion-label>
+              </ion-tab-button>
+              
+              <ion-tab-button (click)="sendto('buy-coin')">
+                <ion-icon name="logo-bitcoin"></ion-icon>
+                <ion-label   color="light">Buy Coin</ion-label>
+              </ion-tab-button>
+      
+              
+              <ion-tab-button (click)="sendto('send-coin')">
+                <ion-icon name="send"></ion-icon>
+                <ion-label   color="light">Send Coin</ion-label>
+              </ion-tab-button>
+          
+              <ion-tab-button (click)="sendto('setting')">
+                <ion-icon name="list"></ion-icon>
+                <ion-label  color="light">Menu</ion-label>
+              </ion-tab-button>
+            </ion-tab-bar>
+          
+          </ion-tabs>
+          
+        </ion-toolbar>
+      </ion-footer>
+      

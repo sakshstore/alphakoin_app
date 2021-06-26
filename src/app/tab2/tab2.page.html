@@ -1,0 +1,82 @@
+<ion-content transparent background-size>
+  
+   <ion-grid>
+        <ion-row align-items-center>
+          <ion-col>
+            <ion-img src="/assets/alphakoin.png" class="image"></ion-img>
+   </ion-col>
+   </ion-row>
+  </ion-grid>
+    <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm.value)" >
+      
+      
+  <ion-card class="card">
+    <ion-card-header color="light">
+      <h1>Register</h1>
+    </ion-card-header>
+    <ion-card-title>
+   <ion-label class="h6">Register With Your Email To See The Amazing New </ion-label><ion-label class="h6">Thing You Have Missed.</ion-label></ion-card-title>
+    <ion-card-content>
+    <ion-grid *ngIf="!login_otp">
+    <ion-row>
+      <ion-col>
+        <ion-label text-size-xs position="stacked">Email</ion-label>
+             <ion-item>
+        <ion-input formControlName="email" type="text"></ion-input>
+          </ion-item>
+  </ion-col>
+  </ion-row>
+            
+     <ion-row>
+      <ion-col>
+        <ion-label position="stacked">Full Name</ion-label>
+          <ion-item>
+            <ion-input type="text" formControlName="name"></ion-input>
+          </ion-item>
+          </ion-col>
+        </ion-row>
+  
+  <ion-row>
+    <ion-col>
+      <ion-label position="stacked">Password</ion-label>
+          <ion-item>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+  <div class="form-group">
+         <ion-button type="submit" expand="block" size="default" >Register</ion-button></div>
+
+
+
+    </ion-grid>
+  
+ <ion-grid *ngIf="login_otp">
+  <ion-row>
+  <ion-col>
+    <ion-item no-padding transparent input >
+              <ion-label text-size-xs position="stacked">OTP</ion-label>
+              <ion-input type="text" formControlName="otp" name="otp"></ion-input>
+            </ion-item>
+  </ion-col>
+  </ion-row>
+  <div class="form-group" >
+            <ion-button type="button" expand="block" (click)="emailotpverify()" size="default" >Verify...</ion-button>
+          </div>
+
+</ion-grid>
+    <div class="ion-text-center"><p>Already A Member <ion-label (click)="sendto('tabs/tab1')">LOGIN HERE</ion-label></p></div>
+ 
+    <div  *ngIf="loading" class="ion-text-center">
+      <ion-spinner name="bubbles"></ion-spinner>
+        <span class="ion-text-center">Loading...</span></div>
+  </ion-card-content>
+    </ion-card>
+    </form>
+
+
+
+
+  
+  </ion-content>

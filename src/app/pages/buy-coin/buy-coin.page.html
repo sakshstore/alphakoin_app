@@ -1,0 +1,201 @@
+
+
+<ion-content  transparent background-size >
+ 
+  
+  <ion-toolbar color="dark">
+     
+    <ion-title>Buy Coin </ion-title>
+</ion-toolbar>
+    <ion-card class="card" *ngIf="!one">
+      <form  [formGroup]="buyForm" (ngSubmit)="onSubmit(buyForm.value)">
+      <ion-card-header color="light">
+     <h1>Current {{coin_name}} balance is {{bnexx_balance}} </h1>
+      </ion-card-header>
+   
+      <ion-card-content>
+      <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label text-size-xs position="stacked">Receiving Address</ion-label>
+               <ion-item>
+          <ion-input  formControlName="ReceivingAddress" type="text"></ion-input>
+            </ion-item>
+    </ion-col>
+    </ion-row>
+
+
+
+    <ion-row>
+      <ion-col>     
+    <div>Tap to use your own address <p (click)="setthisaddress()">{{bnexx_address}} </p>  </div>
+</ion-col></ion-row>
+
+              
+       <ion-row>
+        <ion-col>
+          <ion-label position="stacked">Amount</ion-label>
+            <ion-item>
+              <ion-input type="number" formControlName="amount"></ion-input>
+            </ion-item>
+            </ion-col>
+
+            
+          </ion-row>
+
+         
+          <ion-row>
+            <ion-col>
+              <ion-label position="stacked">Type</ion-label>
+                <ion-item>
+                  <ion-select placeholder=".......................Select one network fee........................." class="form-control" formControlName="type">
+  
+                    <ion-select-option value="BTC">By Bitcoin</ion-select-option>
+                  <ion-select-option value="Ethereum">By Ethereum</ion-select-option>
+
+    
+                  </ion-select>
+                </ion-item>
+                </ion-col>
+              </ion-row><br>
+    <div class="form-group">
+           <ion-button type="submit" expand="block" size="default" >Buy Now</ion-button></div>
+      </ion-grid>
+    
+    
+    </ion-card-content>
+    </form>
+      </ion-card>
+
+
+
+
+
+
+  <ion-card *ngIf="!two" class="card" >
+
+    <ion-card-content>
+
+
+      <ion-list>
+
+        <ion-item>
+          <ion-label>Receiving Address  <br /><br />  {{ReceivingAddress}}</ion-label>
+          
+        </ion-item><br>
+
+
+        
+        <ion-item>
+          <ion-label>Amount in USD    <br /><br />{{amountUSD}}</ion-label>
+          
+        </ion-item><br>
+
+
+
+        
+        <ion-item>
+          <ion-label>Amount in BTC   <br /><br />{{amountBTC}}</ion-label>
+          
+        </ion-item><br>
+
+
+
+        
+        <ion-item>
+          <ion-label>Total coin purchase   <br /><br /> {{amount}}</ion-label>
+          
+        </ion-item><br>
+
+        
+        <ion-item>
+          <ion-label>BTC deposit address   <br /><br /><p >{{Address}} </p>   
+          
+          <p>Tap to copy this address </p>
+
+          
+
+
+
+          <ion-img class="ion-margin-bottom" src="https://blockchain.info/qr?data={{Address}}&size=200"></ion-img>
+
+
+            
+
+          
+          </ion-label>
+          
+        </ion-item><br>
+
+
+
+
+      </ion-list>
+ <br>
+   
+
+      <div class="form-group">
+        <ion-button color="success" type="button" expand="block" size="default" (click)="invoicepaid()">{{paidbtn}}</ion-button></div>
+
+     
+
+<br>
+
+
+      <div class="form-group">
+        <ion-button type="button" expand="block" size="default" (click)="cancelorchange()">Cancel or change</ion-button></div>
+      
+
+
+
+    </ion-card-content>
+
+
+  </ion-card>
+
+
+</ion-content>
+
+
+
+
+
+
+<ion-footer>
+  <ion-toolbar>
+
+
+    <ion-tabs>
+
+      <ion-tab-bar slot="bottom" color="dark">
+        <ion-tab-button (click)="sendto('dashboard')">
+          <ion-icon name="home"></ion-icon>
+          <ion-label color="light">Home</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="sendto('transactions')">
+          <ion-icon name="wallet"></ion-icon>
+          <ion-label   color="light">Transactions</ion-label>
+        </ion-tab-button>
+        
+        <ion-tab-button (click)="sendto('buy-coin')">
+          <ion-icon name="logo-bitcoin"></ion-icon>
+          <ion-label   color="light">Buy Coin</ion-label>
+        </ion-tab-button>
+
+        
+        <ion-tab-button (click)="sendto('send-coin')">
+          <ion-icon name="send"></ion-icon>
+          <ion-label   color="light">Send Coin</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="sendto('setting')">
+          <ion-icon name="list"></ion-icon>
+          <ion-label  color="light">Menu</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    
+    </ion-tabs>
+    
+  </ion-toolbar>
+</ion-footer>

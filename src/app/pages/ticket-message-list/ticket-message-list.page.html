@@ -1,0 +1,116 @@
+
+
+<ion-content transparent background-size >
+ 
+
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    <ion-title> Messages List</ion-title>
+
+    </ion-buttons>
+    <ion-buttons slot="end" (click)="sendto1()">
+      <ion-title class="msg"><ion-icon name="add"></ion-icon><u>Add  Message</u></ion-title>
+
+       
+     </ion-buttons>
+ 
+    
+  </ion-toolbar>
+      
+      
+      <ion-card class="card">
+        <ion-card-header color="light">
+          <h1>Tickets Messages</h1>
+        </ion-card-header>
+     
+        <ion-card-content>
+    
+          <ion-item-group *ngFor="let t of messages">
+            <br>
+            <ion-item>
+              
+               {{t.message}}  <br><br>
+      
+              {{t.created_at| date:'short'}} <br>
+      <hr />
+      
+      
+            </ion-item>
+      
+      
+          </ion-item-group>
+         
+         
+         
+         
+           <div class="ion-text-center" *ngIf="count1==0">
+         
+         
+         
+             <h3>No ticket found</h3>
+           </div>
+      
+      </ion-card-content>
+        </ion-card>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar>
+
+
+    <ion-tabs>
+
+      <ion-tab-bar slot="bottom" color="dark">
+        <ion-tab-button (click)="sendto('dashboard')">
+          <ion-icon name="home"></ion-icon>
+          <ion-label color="light">Home</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="sendto('transactions')">
+          <ion-icon name="wallet"></ion-icon>
+          <ion-label   color="light">Transactions</ion-label>
+        </ion-tab-button>
+        
+        <ion-tab-button (click)="sendto('buy-coin')">
+          <ion-icon name="logo-bitcoin"></ion-icon>
+          <ion-label   color="light">Buy Coin</ion-label>
+        </ion-tab-button>
+
+        
+        <ion-tab-button (click)="sendto('send-coin')">
+          <ion-icon name="send"></ion-icon>
+          <ion-label   color="light">Send Coin</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="sendto('setting')">
+          <ion-icon name="list"></ion-icon>
+          <ion-label  color="light">Menu</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    
+    </ion-tabs>
+    
+  </ion-toolbar>
+</ion-footer>

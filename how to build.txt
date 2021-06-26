@@ -1,0 +1,13 @@
+$ npm install -g cordova-res
+$ ionic cordova resources
+$ npm install -g ionic cordova-res
+ionic cordova build android --release
+
+
+
+"C:\Program Files\Java\jdk1.8.0_281\bin\jarsigner" -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore "C:\Program Files\Java\jdk1.8.0_281\bin\my-release-key.keystore" "C:\Users\GYANENDRA VERMA\Downloads\new_app_wallet_code-master\new_app_wallet_code-master\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk" alias_name
+
+
+This@#0987
+
+"C:\Users\GYANENDRA VERMA\AppData\Local\Android\Sdk\build-tools\30.0.3\zipalign" -v 4 "C:\Users\GYANENDRA VERMA\Downloads\new_app_wallet_code-master\new_app_wallet_code-master\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk" "MilexcoinTradeApp10794.apk

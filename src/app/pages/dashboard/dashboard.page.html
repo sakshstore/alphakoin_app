@@ -1,0 +1,300 @@
+
+
+<ion-content transparent background-size>
+
+
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+     
+        <ion-title>{{coin_name}}  Wallet</ion-title>
+
+        
+      </ion-buttons>
+
+      <ion-buttons slot="end" (click)="logout()">
+       <ion-title class="logout"><ion-icon name="lock-closed"></ion-icon><u>Logout</u></ion-title>
+
+        
+      </ion-buttons>
+  
+    </ion-toolbar>
+  
+    <ion-grid>
+      <ion-row>
+
+        
+        <ion-col size="12">
+  
+  
+          <ion-card>
+           
+            <ion-card-content>
+  
+           
+                <ion-row>
+
+                  <ion-slides [options]="slideOpts" pager="true">
+                    <ion-slide>
+                  <ion-col (click)="sendto('buy-coin')">
+                <ion-fab-button color="primary"><ion-icon name="logo-bitcoin" color="light"></ion-icon></ion-fab-button>
+                <h6>Buy </h6>
+              </ion-col>
+
+         
+              <ion-col (click)="sendto('send-coin')">
+            
+                <ion-fab-button color="warning"><ion-icon name="send" color="light"></ion-icon></ion-fab-button>
+                <h6>Send </h6>
+                </ion-col>  
+           
+                <ion-col (click)="sendto('transactions')">
+           
+                  <ion-fab-button color="danger"><ion-icon name="wallet" color="light"></ion-icon></ion-fab-button>
+                  <h6>Transactions</h6>
+                  </ion-col> 
+
+           
+                <ion-col (click)="sendto('support')">
+           
+                  <ion-fab-button color="success"><ion-icon name="people" color="light"></ion-icon></ion-fab-button>
+                  <h6>Support</h6>
+                  </ion-col> </ion-slide>
+
+
+              
+  <ion-slide>
+                  <ion-col (click)="sendto('profile')">
+                <ion-fab-button color="secondary"><ion-icon name="person" color="light"></ion-icon></ion-fab-button>
+                <h6>Profile </h6>
+              </ion-col>
+            
+              <ion-col (click)="sendto('ticket-list')">
+                <ion-fab-button color="medium"><ion-icon name="list" color="light"></ion-icon></ion-fab-button>
+                <h6>Ticket </h6>
+              </ion-col>
+
+              <ion-col (click)="sendto('setting')">
+                <ion-fab-button color="dark"><ion-icon name="person-circle-outline" color="light"></ion-icon></ion-fab-button>
+                <h6>Setting </h6>
+              </ion-col>
+
+              <ion-col (click)="logout()">
+                <ion-fab-button color="tertiary"><ion-icon name="log-out" color="light"></ion-icon></ion-fab-button>
+                <h6>Logout </h6>
+              </ion-col>
+
+
+            </ion-slide>
+
+
+                  </ion-slides>
+              </ion-row>
+
+ 
+ 
+           
+  
+            </ion-card-content>
+          </ion-card>
+  
+        </ion-col>
+  
+  
+        <ion-col size="12">
+  
+  
+          <ion-card>
+         
+  
+            <ion-card-content>
+              <img src="https://wapi.btvcash.net/wallet-icon1.png" />
+              <ion-card-title><small>  {{coin_name}}   : <b>{{bnexx_balance}}</b></small> <br>
+  
+              </ion-card-title>
+  
+  
+  
+            </ion-card-content>
+          </ion-card>
+  
+        </ion-col>
+  
+  
+  
+        <ion-col size="12">
+  
+  
+          <ion-card>
+  
+  
+            <ion-card-content>
+  
+              <ion-card-title>
+  
+                <small>Deposit {{coin_name}} Address: <b>{{bnexx_address}}</b></small><br><br>
+       <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{bnexx_address}}" />
+  
+  
+              </ion-card-title>
+  
+  
+  
+            </ion-card-content>
+          </ion-card>
+  
+        </ion-col>
+  
+  
+  
+  
+        <ion-col size="12">
+  
+  
+          <ion-card>
+           
+  
+            <ion-card-content>
+             <img src="https://wapi.btvcash.net/wallet-icon2.png" />
+              <ion-card-title>
+  
+                <small>Exchange Rate: <b>{{btc_rate}}/USD</b></small>
+  
+              </ion-card-title>
+  
+  
+  
+            </ion-card-content>
+          </ion-card>
+  
+        </ion-col>
+  
+   
+         
+  
+  
+        <ion-col size="12">
+  
+          <ion-card>
+    
+            <ion-card-content>
+              <img src="https://wapi.btvcash.net/wallet-icon4.png" />
+              <ion-card-title>
+                <small>Bitcoin Exchange Rate: <b>{{btc_rate}}</b></small>
+  
+              </ion-card-title>
+  
+  
+  
+  
+            </ion-card-content>
+          </ion-card>
+  
+        </ion-col>
+  
+  
+        <ion-col size="12">
+  
+          <ion-card>
+  
+  
+            <ion-card-content>
+              <ion-item>
+                <ion-icon name="logo-bitcoin" slot="start"></ion-icon>
+                <ion-label (click)="sendto('buy-coin')"> Buy Coin </ion-label>
+  
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        
+        <ion-col size="12">
+  
+          <ion-card>
+  
+  
+            <ion-card-content>
+              <ion-item>
+                <ion-icon name="send" slot="start"></ion-icon>
+                <ion-label (click)="sendto('send-coin')"> Send Coin</ion-label>
+  
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        
+
+        <ion-col size="12">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-icon name="list" slot="start"></ion-icon>
+                <ion-label (click)="sendto('transactions')">Transactions </ion-label>
+  
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+         
+        <ion-col size="12">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+                <ion-icon name="people" slot="start"></ion-icon>
+                <ion-label (click)="sendto('ticket-list')">Support </ion-label>
+  
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+
+
+  
+      </ion-row>
+  
+    </ion-grid>
+  
+
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+
+
+    <ion-tabs>
+
+      <ion-tab-bar slot="bottom" color="dark">
+        <ion-tab-button (click)="sendto('dashboard')">
+          <ion-icon name="home"></ion-icon>
+          <ion-label color="light">Home</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="sendto('transactions')">
+          <ion-icon name="wallet"></ion-icon>
+          <ion-label   color="light">Transactions</ion-label>
+        </ion-tab-button>
+        
+        <ion-tab-button (click)="sendto('buy-coin')">
+          <ion-icon name="logo-bitcoin"></ion-icon>
+          <ion-label   color="light">Buy Coin</ion-label>
+        </ion-tab-button>
+
+        
+        <ion-tab-button (click)="sendto('send-coin')">
+          <ion-icon name="send"></ion-icon>
+          <ion-label   color="light">Send Coin</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="sendto('setting')">
+          <ion-icon name="list"></ion-icon>
+          <ion-label  color="light">Menu</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    
+    </ion-tabs>
+    
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,177 @@
+
+<ion-content transparent background-size >
+  <ion-toolbar color="dark">
+
+     
+    <ion-title>Send Payment</ion-title>
+
+</ion-toolbar>
+
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit(addForm.value)">
+
+
+         
+    <ion-card class="card" *ngIf="!one">
+      <ion-card-header color="light">
+        <h1>Rate : {{rate}}</h1>
+     
+      </ion-card-header>
+   
+      <ion-card-content>
+      <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label text-size-xs position="stacked"> Recipient address</ion-label>
+               <ion-item>
+          <ion-input  formControlName="toAddress" type="text"></ion-input>
+            </ion-item>
+    </ion-col>
+    </ion-row>
+              
+       <ion-row>
+        <ion-col>
+          <ion-label position="stacked">Amount</ion-label>
+            <ion-item>
+              <ion-input type="number" (keyup)="onKey($event)" formControlName="amount" placeholder=""
+              name="amount"  id="amount" value={{rate1}}></ion-input>
+            </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-label position="stacked">Amount USD</ion-label>
+                <ion-item>
+                  <ion-input type="number" (keyup)="onKey1($event)" formControlName="amount_usd" placeholder="USD"
+                  name="amount_usd"  id="amount_usd" value={{USD}}></ion-input>
+                </ion-item>
+                </ion-col>
+              </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <ion-label position="stacked">Description</ion-label>
+            <ion-item>
+              <ion-textarea rows="6" cols="20" class="form-control" type="text" formControlName="description" placeholder="Enter Details..." name="details"
+              ></ion-textarea>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        
+                  
+        <ion-row>
+          <ion-col>
+            <ion-label position="stacked">Network Fee</ion-label>
+              <ion-item>
+                <ion-select placeholder=".......................Select one network fee........................." class="form-control" formControlName="network_fee">
+
+                    <ion-select-option value="Regular">Regular</ion-select-option>
+                    <ion-select-option value="Priority">Priority</ion-select-option>
+  
+                </ion-select>
+              </ion-item>
+              </ion-col>
+            </ion-row><br>
+    <div class="form-group">
+           <ion-button type="button" expand="block" size="default" (click)="confirm()" >Send</ion-button></div>
+      </ion-grid>
+    
+    
+    </ion-card-content>
+      </ion-card>
+
+
+
+    <ion-card *ngIf="!two" class="card">
+
+      <ion-card-header color="light">
+        <!-- <ion-card-title>Rate : {{rate}}</ion-card-title> -->
+        <h1>Rate : {{rate}}</h1>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+
+
+          <ion-list>
+
+            <ion-item>
+              <ion-label> To<br /><br /> {{toAddress}}</ion-label>
+
+            </ion-item><br>
+
+            <ion-item>
+              <ion-label>Amount<br /><br />{{amount}}</ion-label>
+
+            </ion-item><br>
+            <ion-item>
+              <ion-label>Amount in USD<br /><br />{{amount_usd}}</ion-label>
+
+            </ion-item><br>
+
+            <ion-item>
+              <ion-label>Description <br /><br /> {{description}}</ion-label>
+
+            </ion-item><br>
+          </ion-list>
+        </ion-grid><br /><br /><br>
+ <div class="form-group">
+      
+  
+  <ion-button  *ngIf="!tid" type="button" expand="block" size="default"  type="submit" >Confirmation</ion-button></div>
+      
+<br>
+
+<b *ngIf="tid">Transactions was successful with Hash {{trid}}</b>
+
+      </ion-card-content>
+    </ion-card>
+
+
+
+  </form>
+
+</ion-content>
+
+
+
+
+
+
+<ion-footer>
+  <ion-toolbar>
+
+
+    <ion-tabs>
+
+      <ion-tab-bar slot="bottom" color="dark">
+        <ion-tab-button (click)="sendto('dashboard')">
+          <ion-icon name="home"></ion-icon>
+          <ion-label color="light">Home</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="sendto('transactions')">
+          <ion-icon name="wallet"></ion-icon>
+          <ion-label   color="light">Transactions</ion-label>
+        </ion-tab-button>
+        
+        <ion-tab-button (click)="sendto('buy-coin')">
+          <ion-icon name="logo-bitcoin"></ion-icon>
+          <ion-label   color="light">Buy Coin</ion-label>
+        </ion-tab-button>
+
+        
+        <ion-tab-button (click)="sendto('send-coin')">
+          <ion-icon name="send"></ion-icon>
+          <ion-label   color="light">Send Coin</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="sendto('setting')">
+          <ion-icon name="list"></ion-icon>
+          <ion-label  color="light">Menu</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    
+    </ion-tabs>
+    
+  </ion-toolbar>
+</ion-footer>

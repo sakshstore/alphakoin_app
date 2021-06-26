@@ -1,0 +1,121 @@
+
+
+
+<ion-content transparent background-size >
+  <ion-toolbar color="dark">
+    <ion-buttons>
+  
+      <ion-title>Profile</ion-title>
+    </ion-buttons>
+
+    <ion-buttons slot="end" (click)="sendto('two-factor-authentication')">
+      <ion-title class="logout"><ion-icon name="person-circle-outline"></ion-icon> <u> Two-Factor</u></ion-title>
+
+       
+     </ion-buttons>
+
+  </ion-toolbar>
+
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm.value)">
+      
+      
+    <ion-card class="card">
+      <ion-card-header color="light">
+        <h1>Profile</h1>
+      </ion-card-header>
+   
+      <ion-card-content>
+      <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label text-size-xs position="stacked">Email</ion-label>
+               <ion-item>
+          <ion-input readonly="true" formControlName="email" type="text"></ion-input>
+            </ion-item>
+    </ion-col>
+    </ion-row>
+              
+       <ion-row>
+        <ion-col>
+          <ion-label position="stacked">Name</ion-label>
+            <ion-item>
+              <ion-input type="text" formControlName="first_name"></ion-input>
+            </ion-item>
+            </ion-col>
+          </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <ion-label position="stacked">Mobile</ion-label>
+            <ion-item>
+              <ion-input type="number" formControlName="mobile"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+    <div class="form-group">
+           <ion-button type="submit" expand="block" size="default" >Update</ion-button></div>
+      </ion-grid>
+    
+    
+    </ion-card-content>
+      </ion-card>
+      </form>
+
+
+
+
+
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ion-footer>
+  <ion-toolbar>
+
+
+    <ion-tabs>
+
+      <ion-tab-bar slot="bottom" color="dark">
+        <ion-tab-button (click)="sendto('dashboard')">
+          <ion-icon name="home"></ion-icon>
+          <ion-label color="light">Home</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="sendto('transactions')">
+          <ion-icon name="wallet"></ion-icon>
+          <ion-label   color="light">Transactions</ion-label>
+        </ion-tab-button>
+        
+        <ion-tab-button (click)="sendto('buy-coin')">
+          <ion-icon name="logo-bitcoin"></ion-icon>
+          <ion-label   color="light">Buy Coin</ion-label>
+        </ion-tab-button>
+
+        
+        <ion-tab-button (click)="sendto('send-coin')">
+          <ion-icon name="send"></ion-icon>
+          <ion-label   color="light">Send Coin</ion-label>
+        </ion-tab-button>
+    
+        <ion-tab-button (click)="sendto('setting')">
+          <ion-icon name="list"></ion-icon>
+          <ion-label  color="light">Menu</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    
+    </ion-tabs>
+    
+  </ion-toolbar>
+</ion-footer>
